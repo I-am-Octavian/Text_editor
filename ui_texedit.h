@@ -75,7 +75,7 @@ public:
         TexEdit->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TexEdit);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 25));
+        menubar->setGeometry(QRect(0, 0, 800, 26));
         menuSave = new QMenu(menubar);
         menuSave->setObjectName(QStringLiteral("menuSave"));
         menuEdit = new QMenu(menubar);

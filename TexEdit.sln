@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.4.33205.214
+VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TexEdit", "TexEdit.vcxproj", "{A07E7ADA-46D8-397B-9B6A-E6951031A4CF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TexEdit", "TexEdit.vcxproj", "{CD7FEDFB-6877-3BC9-AD77-03C80B5EFE60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A07E7ADA-46D8-397B-9B6A-E6951031A4CF}.Debug|x64.ActiveCfg = Debug|x64
-		{A07E7ADA-46D8-397B-9B6A-E6951031A4CF}.Debug|x64.Build.0 = Debug|x64
-		{A07E7ADA-46D8-397B-9B6A-E6951031A4CF}.Release|x64.ActiveCfg = Release|x64
-		{A07E7ADA-46D8-397B-9B6A-E6951031A4CF}.Release|x64.Build.0 = Release|x64
+		{CD7FEDFB-6877-3BC9-AD77-03C80B5EFE60}.Debug|x64.ActiveCfg = Debug|x64
+		{CD7FEDFB-6877-3BC9-AD77-03C80B5EFE60}.Debug|x64.Build.0 = Debug|x64
+		{CD7FEDFB-6877-3BC9-AD77-03C80B5EFE60}.Release|x64.ActiveCfg = Release|x64
+		{CD7FEDFB-6877-3BC9-AD77-03C80B5EFE60}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {31660784-B351-4FD2-B686-A7AF9998BC62}
+		SolutionGuid = {29993E7D-D5CF-4662-8A0C-91A34DE608B5}
 	EndGlobalSection
 EndGlobal

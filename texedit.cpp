@@ -13,7 +13,7 @@ TexEdit::TexEdit(QWidget *parent)
     connect(ui->actionOpen, &QAction::triggered, this, &TexEdit::open);
     connect(ui->actionSave, &QAction::triggered, this, &TexEdit::save);
     connect(ui->actionSave_As, &QAction::triggered, this, &TexEdit::saveAs);
-    connect(ui->actionQuit, &QAction::triggered, this, &TexEdit::quit);
+    connect(ui->actionQuit_2, &QAction::triggered, this, &TexEdit::quit);
 
 
     connect(ui->actionUndo, &QAction::triggered, this, &TexEdit::undo);
@@ -38,7 +38,7 @@ TexEdit::~TexEdit()
 
 void TexEdit::newFile() {
 
-    currentFile.clear();
+    m_CurrentFileName.clear();
     ui->u_Text->setText(QString());
 }
 
@@ -46,12 +46,12 @@ void TexEdit::save()
 {
     QString fileName;
     // If we don't have a filename from before, get one.
-    if (currentFile.isEmpty()) {
+    if (m_CurrentFileName.isEmpty()) {
         fileName = QFileDialog::getSaveFileName(this, "Save");
-        currentFile = fileName;
+        m_CurrentFileName = fileName;
     }
     else {
-        fileName = currentFile;
+        fileName = m_CurrentFileName;
     }
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly | QFile::Text)) {
@@ -74,7 +74,7 @@ void TexEdit::open()
 {
     QString fileName = QFileDialog::getOpenFileName(this, "Open the file");
     QFile file(fileName);
-    currentFile = fileName;
+    m_CurrentFileName = fileName;
     if (!file.open(QIODevice::ReadOnly | QFile::Text)) {
         QMessageBox::warning(this, "Warning", "Cannot open file: " + file.errorString());
         return;
@@ -95,7 +95,7 @@ void TexEdit::saveAs()
         QMessageBox::warning(this, "Warning", "Cannot save file: " + file.errorString());
         return;
     }
-    currentFile = fileName;
+    m_CurrentFileName = fileName;
     setWindowTitle(fileName);
     QTextStream out(&file);
     QString text = ui->u_Text->toPlainText();
@@ -124,6 +124,27 @@ void TexEdit::changeFont()
 void TexEdit::about()
 {
     QMessageBox::about(this, "About",
-                       "TODO Message"
+                       "This project was created for an academic project by "
+                       "The Polymorphic Four: "
+                       "Aditya Sharma, "
+                       "Amitansu Raj Neti, "
+                       "Anant  Rajput, "
+                       "Satyarth Singh"
                        );
+}
+
+void TexEdit::closeEvent(QCloseEvent* theEvent)
+{
+    theEvent->ignore();
+    if (m_CurrentFileName == "")
+    {
+        if (QMessageBox::Yes == QMessageBox::question(this, "Not Saved", "Are you sure you want to close?", QMessageBox::Yes | QMessageBox::No))
+        {
+            theEvent->accept();
+        }
+    }
+    else
+    {
+        theEvent->accept();
+    }
 }

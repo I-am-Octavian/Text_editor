@@ -9,6 +9,8 @@
 #include <QTextStream>
 #include <QMessageBox>
 
+#include <QCloseEvent>
+
 // for font
 #include <QFontDialog>
 
@@ -24,7 +26,7 @@ class TexEdit : public QMainWindow
 public:
     TexEdit(QWidget *parent = nullptr);
     ~TexEdit();
-
+    
     // for file menu
     void newFile();
     void open();
@@ -40,8 +42,11 @@ public:
     // for help menu
     void about();
 
+protected:
+    void closeEvent(QCloseEvent* theEvent);
+
 private:
     Ui::TexEdit *ui;
-    QString currentFile = "";
+    QString m_CurrentFileName = "";
 };
 #endif // TEXEDIT_H
